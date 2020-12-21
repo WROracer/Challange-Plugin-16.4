@@ -29,6 +29,7 @@ public class ChallangeConfig {
         if (!file.exists()) {
             try {
                 cfg.set("Challange.NoDead.Enabled",true);
+                cfg.set("Challange.Timer.Enabled",true);
                 cfg.save(file);
             } catch (IOException ignored) {
             }
@@ -41,6 +42,13 @@ public class ChallangeConfig {
     }
     public void setNoDeadEnabled(boolean enabled){
         cfg.set("Challange.NoDead.Enabled",enabled);
+        save();
+    }
+    public boolean isTimerEnabled(){
+        return cfg.getBoolean("Challange.Timer.Enabled");
+    }
+    public void setTimerEnabled(boolean enabled){
+        cfg.set("Challange.Timer.Enabled",enabled);
         save();
     }
 

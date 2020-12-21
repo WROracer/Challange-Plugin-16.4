@@ -6,3 +6,5 @@ author: WRORacer
 commands:
   nodead:
     description: Mit diesem Befehl änderst du due No Dead Challange
+  timer:
+    description: Mit diesem Befehl Steuerst du den Timer

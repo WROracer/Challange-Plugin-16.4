@@ -16,6 +16,7 @@ public class DeadListender implements Listener {
             Bukkit.getOnlinePlayers().forEach(player -> {
                 player.setGameMode(GameMode.SPECTATOR);
             });
+            Main.getMain().timer.stopTimer();
             Bukkit.broadcastMessage("§4Challange beendet durch Spieler §6" + deathEvent.getEntity().getName() + "\n§1" + deathEvent.getDeathMessage() + "\n§4Das war doch nicht so gewollt oder ?");
             deathEvent.setDeathMessage("");
         }
