@@ -1,0 +1,6 @@
+name: Challange_Plugin
+main: de.wroracer.challange.Main
+version: Snapshot-0.1
+author: WRORacer
+
+commands:
