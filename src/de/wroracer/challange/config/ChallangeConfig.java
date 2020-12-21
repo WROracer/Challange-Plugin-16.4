@@ -30,6 +30,7 @@ public class ChallangeConfig {
             try {
                 cfg.set("Challange.NoDead.Enabled",true);
                 cfg.set("Challange.Timer.Enabled",true);
+                cfg.set("Challange.DamageAnounce.Enable",true);
                 cfg.save(file);
             } catch (IOException ignored) {
             }
@@ -51,6 +52,14 @@ public class ChallangeConfig {
         cfg.set("Challange.Timer.Enabled",enabled);
         save();
     }
+    public boolean isDamageAnounceEnabled(){
+        return cfg.getBoolean("Challange.DamageAnounce.Enable");
+    }
+    public void setDamageAnounceEnabled(boolean enabled){
+        cfg.set("Challange.DamageAnounce.Enable",enabled);
+        save();
+    }
+
 
 
 

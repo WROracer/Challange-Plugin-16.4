@@ -1,8 +1,10 @@
 package de.wroracer.challange;
 
+import de.wroracer.challange.commands.DamageCommand;
 import de.wroracer.challange.commands.NoDeadCommand;
 import de.wroracer.challange.commands.TimerCommand;
 import de.wroracer.challange.config.ChallangeConfig;
+import de.wroracer.challange.listenders.DamageListender;
 import de.wroracer.challange.listenders.DeadListender;
 import de.wroracer.challange.timer.Timer;
 import org.bukkit.Bukkit;
@@ -47,12 +49,14 @@ public class Main extends JavaPlugin {
     private void registerListenders(){
         PluginManager pluginManager = Bukkit.getPluginManager();
         pluginManager.registerEvents(new DeadListender(), this);
+        pluginManager.registerEvents(new DamageListender(),this);
     }
 
     private void registerCommands(){
         TimerCommand timerCommand = new TimerCommand();
 
         getCommand("nodead").setExecutor(new NoDeadCommand());
+        getCommand("damage").setExecutor(new DamageCommand());
         PluginCommand timer = getCommand("timer");
         timer.setExecutor(timerCommand);
         timer.setTabCompleter(timerCommand);
